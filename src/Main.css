@@ -1,0 +1,347 @@
+/* font-family: 'Rokkitt', serif; */
+/* font-family: 'Saira Semi Condensed', sans-serif; */
+.body,ul{
+margin:0;
+padding: 0
+}
+
+.bgImage{
+background-attachment: fixed;}
+/* 
+
+
+NAVIGATION
+
+
+ */
+
+.navContainer{
+background-color: rgba(0, 0, 0, 0.393);
+}
+.navLinkContainer{
+display: flex;
+flex-direction: row;
+justify-content: center;
+font-family: 'Rokkitt', serif;
+font-size: 24px;
+list-style: none;
+}
+.navLink{
+padding: 20px;
+margin: 10px;
+background-color: rgba(0, 0, 0, 0.5);
+border-radius: 5px;
+transition: all .5s;
+
+}
+.navLink:hover{
+    transform: scale(1.15);
+}
+.navLink a{
+text-decoration: none;
+color:white;
+}
+.navHamburgerContainer{
+    display: none;
+}
+
+/* 
+
+
+
+HERO PAGE
+
+
+
+ */
+
+
+ .heroContainer{
+    width: auto;
+    height: 50vh;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+ .heroLargeText{
+     font-size: 64px;
+     padding: 0px 20px;
+     color: aliceblue;
+ }
+ .heroSmallText{
+     font-size: 36px;
+     padding: 0px 20px;
+     text-align: center;
+     color: aliceblue;
+ }
+ .downArrow{
+     margin-top: 50px;
+ }
+
+
+
+/* 
+
+
+
+ PROJECTS
+
+
+ */
+
+ .projectContainer{
+    background: rgba(255, 255, 255, 0.45);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ .projectBox{
+     display: flex;
+     justify-content: space-around;
+     flex-wrap: wrap;
+ }
+
+ .headingText{
+    font-size: 32px;
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    border-radius: 0px 20px;
+ }
+
+ .headingWhite{
+    background-color: rgba(255, 255, 255, 0.5);
+    color:000;
+
+ }
+
+ .headingBlack{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white
+ }
+
+ .projectCard{
+     width: 70vw;
+     margin: 20px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+ .titleBox{
+     background-color: white;
+     border-radius: 5px 5px 0px 0px;
+     padding: 15px;
+     width: 200px;
+     font-size: 20px;
+     text-align: center;
+     font-family: 'Saira Semi Condensed', sans-serif;
+     box-shadow: 0px -3px 25px rgba(0, 0, 0, 0.495);
+ }
+
+ .projectImage{
+     width: 350px;
+     border-radius: 5px;
+     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.495);
+
+
+ }
+
+ .footerBox{
+     background-color: white;
+     font-family: 'Saira Semi Condensed', sans-serif;
+     display: flex;
+     justify-content: space-evenly;
+     border-radius: 0px 0px 5px 5px;
+     padding: 15px;
+     width: 200px;
+     box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.495);
+
+
+ }
+ .projectLinks{
+    font-family: 'Saira Semi Condensed', sans-serif;
+     font-size: 20px;
+     text-decoration: none;
+     color: black
+ }
+
+
+
+/* 
+
+
+
+
+ SKILLS
+
+
+
+ */
+
+ .skillsContainer{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background: rgba(0, 0, 0, 0.5);
+    }
+
+ .skillsList{
+    list-style: none;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top:20px;
+    width: 70vw;
+    max-width: 70vw;
+    padding-bottom: 30px;
+ }
+
+ .skillsContainer .skillsList li{
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-weight: 900;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+
+ }
+
+/* 
+
+
+
+ABOUT ME
+
+
+ */
+
+
+ .aboutContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    padding-bottom: 40px; }
+
+ .lindseyImage{
+     width: 250px;
+     
+ }
+ .aboutText{
+    width: 70vw;
+    height: fit-content;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-weight: 900;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px 0px 15px 0px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+
+
+ }
+
+/* 
+
+CONTACT
+
+ */
+
+ .contactContainer{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+ .contactBox{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-family: 'Saira Semi Condensed', sans-serif;
+    font-weight: 900;
+    padding: 15px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+
+ }
+.contactLink{
+    color: white;
+    text-decoration: none;
+    text-align: left;
+}
+
+
+
+
+@media screen and (max-width: 600px){
+    .hamLink a{
+    text-decoration: none;
+    color:white;
+    }
+    .navLinkContainer{
+    display: none;
+    }
+    .navHamburgerContainer{
+    display: contents;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    font-family: 'Rokkitt', serif;
+    font-size: 24px;
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 20vw;
+    width: 60vw;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-bottom: 20px;
+    z-index: 10;
+    }
+    .hamLinkContainerHidden{
+    display: none;
+    }
+    .hamLinkContainerShow{
+        display: contents;
+        list-style: none; 
+    }
+    .hamIcon{
+    width: 40px;
+    padding: 20px
+    }
+
+    /* HERO */
+    .heroContainer{
+        padding-top: 90px;
+    }
+
+
+    /*PROJECTS*/
+
+    .projectBox{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    /* SKILLS */
+    
+    .skillsList{
+    width: 100vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    }
+
+}
