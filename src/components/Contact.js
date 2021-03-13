@@ -9,7 +9,7 @@ import {
 
 export const Contact = () => {
   return (
-    <div className="contactContainer">
+    <div className="contactContainer" id="contact">
       <span className="headingText headingBlack">LET'S CONNECT</span>
       <div className="contactBox">
         <a href="tel:15045643792" className="contactLink">
