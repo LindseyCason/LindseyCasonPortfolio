@@ -30,7 +30,7 @@ export const Contact = () => {
           rel="noreferrer"
           className="contactLink"
         >
-          <FaQuestion /> : Suggestions or Comments?
+          <FaQuestion /> : Questions or Comments?
         </a>
       </div>
     </div>
