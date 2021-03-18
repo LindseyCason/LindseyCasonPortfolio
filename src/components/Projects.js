@@ -8,14 +8,28 @@ export const Projects = () => {
   return (
     <div className="projectContainer" id="projects">
       <span className="headingText headingWhite">PROJECTS</span>
+
       <div className="projectBox">
         <div className="projectCard">
           <div className="titleBox">Swizzle Cocktail Hub</div>
-          <img
-            src={SwizzleImage}
-            alt="screenshot of swizzle project"
-            className="projectImage"
-          />
+          <div className="swizzleImageBox">
+            <img
+              src={SwizzleImage}
+              alt="screenshot of swizzle project"
+              className="projectImage"
+            />
+            <div className="swizzleStack stack">
+              <ul>
+                <li>JavaScript</li>
+                <li>ReactJS</li>
+                <li>RestAPI</li>
+                <li>HTML/CSS</li>
+                <li>Responsive</li>
+                <li>Figma</li>
+              </ul>
+            </div>
+          </div>
+
           <div className="footerBox">
             <a
               href="http://swizzle-cocktail-hub-lindseyacason.vercel.app/"
@@ -38,11 +52,24 @@ export const Projects = () => {
 
         <div className="projectCard">
           <div className="titleBox">Tic Tac Toe</div>
-          <img
-            src={TicTac}
-            alt="screent shot of tic tac toe project"
-            className="projectImage"
-          />
+          <div className="ticTacImageBox">
+            <img
+              src={TicTac}
+              alt="screent shot of tic tac toe project"
+              className="projectImage"
+            />
+            <div className="ticTacStack stack">
+              <ul>
+                <li>JavaScript</li>
+                <li>ReactJS</li>
+                <li>HTML/CSS</li>
+                <li>Responsive</li>
+                <li>State Management</li>
+                <li>Class Components</li>
+              </ul>
+            </div>
+          </div>
+
           <div className="footerBox">
             <a
               href="https://mytictactoe-jolly-fly.now.sh/"
@@ -64,12 +91,26 @@ export const Projects = () => {
         </div>
 
         <div className="projectCard">
-          <div className="titleBox">HTML/CSS Marketing Page</div>
-          <img
-            src={LifeGPA}
-            alt="screenshot of marketing page project"
-            className="projectImage"
-          />
+          <div className="titleBox">
+            HTML/CSS
+            <br />
+            Marketing Page
+          </div>
+          <div className="lifeGPAimageBox">
+            <img
+              src={LifeGPA}
+              alt="screenshot of marketing page project"
+              className="projectImage"
+            />
+
+            <div className="lifeGPAStack stack">
+              <ul>
+                <li>JavaScript</li>
+                <li>HTML/CSS</li>
+                <li>Responsive</li>
+              </ul>
+            </div>
+          </div>
           <div className="footerBox">
             <a
               href="https://marketing-page-lindsey.vercel.app/index.html"
@@ -92,11 +133,23 @@ export const Projects = () => {
 
         <div className="projectCard">
           <div className="titleBox">Rock Paper Scissors</div>
-          <img
-            src={Rock}
-            alt="screenshot of rock paper scissors project"
-            className="projectImage"
-          />
+          <div className="rockImageBox">
+            <img
+              src={Rock}
+              alt="screenshot of rock paper scissors project"
+              className="projectImage"
+            />
+            <div className="rockStack stack">
+              <ul>
+                <li>JavaScript</li>
+                <li>HTML/CSS</li>
+                <li>ReactJS</li>
+                <li>State Management</li>
+                <li>React Hooks</li>
+                <li>Responsive</li>
+              </ul>
+            </div>
+          </div>
           <div className="footerBox">
             <a
               href="https://rockpaperscissors-five-cyan.now.sh/"
