@@ -124,7 +124,7 @@ HERO PAGE
  }
 
  .projectCard{
-     width: 70vw;
+     width: 40vw;
      margin: 20px;
      display: flex;
      flex-direction: column;
@@ -145,9 +145,103 @@ HERO PAGE
      width: 350px;
      border-radius: 5px;
      box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.495);
-
-
  }
+
+
+
+
+ .swizzleImageBox{
+     position: relative;
+     float: left;
+     height: 196px;
+ }
+ .ticTacImageBox{
+    position: relative;
+    float: left;
+    height: 196px;
+ }
+ .lifeGPAimageBox{
+    position: relative;
+    float: left;
+    height: 196px;
+ }
+ .rockImageBox{
+    position: relative;
+    float: left;
+    height: 196px;
+ }
+
+ .stack{
+    width: 330px;
+    height: 180px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.495);
+    background-color: rgba(0, 0, 0, 0.735);
+    padding: 10px;
+ }
+
+ .stack ul{
+         list-style: none;
+         color: rgb(255, 255, 255);
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         flex-wrap: wrap;
+ }
+ .stack ul li{
+    list-style: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    width: 100px;
+    padding: 10px;
+    margin:5px;
+    text-align: center;
+}
+
+ .swizzleImageBox .swizzleStack{
+     position: absolute;
+     left: 0;
+     top: 0;
+     display: none;
+ }
+.swizzleImageBox:hover .swizzleStack{
+display: block;
+}
+
+
+.ticTacImageBox .ticTacStack{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.ticTacImageBox:hover .ticTacStack{
+display: block;
+}
+
+
+
+.lifeGPAimageBox .lifeGPAStack{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.lifeGPAimageBox:hover .lifeGPAStack{
+display: block;
+}
+.rockImageBox .rockStack{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.rockImageBox:hover .rockStack{
+display: block;
+}
+
+
+
 
  .footerBox{
      background-color: white;
@@ -284,8 +378,11 @@ CONTACT
 
 
 
+/* MEDIA QUERIES */
 
-@media screen and (max-width: 600px){
+
+
+@media screen and (max-width: 750px){
     .hamLink a{
     text-decoration: none;
     color:white;
