@@ -4,7 +4,7 @@ Made with ReactJS, HTML and CSS.
 
 ## Website
 
-[www.LindseyCason.com](www.LindseyCason.com)
+[www.LindseyCason.com](https://www.LindseyCason.com)
 
 ## About Me
 ![Lindsey Portrait](https://lindseycasonportfolio.vercel.app/static/media/lindseyCir.9c73670c.png)
