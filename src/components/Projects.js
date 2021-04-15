@@ -3,6 +3,7 @@ import SwizzleImage from "../assets/SwizzleImages.JPG";
 import TicTac from "../assets/TicTacToeImages.JPG";
 import Rock from "../assets/RockPaperScissorsImages.JPG";
 import LifeGPA from "../assets/LifeGPAImages.JPG";
+import Memories from "../assets/MemoriesImages.JPG";
 
 export const Projects = () => {
   return (
@@ -90,6 +91,44 @@ export const Projects = () => {
           </div>
         </div>
 
+        <div className="projectCard">
+          <div className="titleBox">Memories App (MERN)</div>
+          <div className="memoriesImageBox">
+            <img
+              src={Memories}
+              alt="screenshot of memories project"
+              className="projectImage"
+            />
+            <div className="memoriesStack stack">
+              <ul>
+                <li>JavaScript</li>
+                <li>ReactJS</li>
+                <li>NodeJS</li>
+                <li>MongoDB</li>
+                <li>Material UI</li>
+                <li>Responsive</li>
+              </ul>
+            </div>
+          </div>
+          <div className="footerBox">
+            <a
+              href="https://memories-app-lindsey.netlify.app/"
+              className="projectLinks"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Website
+            </a>
+            <a
+              href="https://github.com/LindseyCason/MemoriesApp"
+              className="projectLinks"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Code
+            </a>
+          </div>
+        </div>
         <div className="projectCard">
           <div className="titleBox">
             HTML/CSS
