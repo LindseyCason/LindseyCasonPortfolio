@@ -165,7 +165,7 @@ HERO PAGE
     float: left;
     height: 196px;
  }
- .rockImageBox{
+ .rockImageBox, .memoriesImageBox{
     position: relative;
     float: left;
     height: 196px;
@@ -237,6 +237,17 @@ display: block;
     display: none;
 }
 .rockImageBox:hover .rockStack{
+display: block;
+}
+
+
+.memoriesImageBox .memoriesStack{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.memoriesImageBox:hover .memoriesStack{
 display: block;
 }
 
