@@ -4,6 +4,8 @@ import TicTac from "../assets/TicTacToeImages.JPG";
 import Rock from "../assets/RockPaperScissorsImages.JPG";
 import LifeGPA from "../assets/LifeGPAImages.JPG";
 import Memories from "../assets/MemoriesImages.JPG";
+import SipSavorStir from "../assets/SipSavorStir.png";
+
 
 export const Projects = () => {
   return (
@@ -15,8 +17,8 @@ export const Projects = () => {
           <div className="titleBox">Swizzle Cocktail Hub</div>
           <div className="swizzleImageBox">
             <img
-              src={SwizzleImage}
-              alt="screenshot of swizzle project"
+              src={SipSavorStir}
+              alt="screenshot of sip savor stir project"
               className="projectImage"
             />
             <div className="swizzleStack stack">
@@ -33,7 +35,7 @@ export const Projects = () => {
 
           <div className="footerBox">
             <a
-              href="http://swizzle-cocktail-hub-lindseyacason.vercel.app/"
+              href="https://cocktails2023-lindseyacason.vercel.app/"
               className="projectLinks"
               target="_blank"
               rel="noreferrer"
@@ -41,7 +43,7 @@ export const Projects = () => {
               Website
             </a>
             <a
-              href="https://github.com/LindseyCason/cocktail"
+              href="https://github.com/LindseyCason/cocktails2023"
               className="projectLinks"
               target="_blank"
               rel="noreferrer"
