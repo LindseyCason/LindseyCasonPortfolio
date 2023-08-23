@@ -1,10 +1,9 @@
 import React from "react";
-import SwizzleImage from "../assets/SwizzleImages.JPG";
 import TicTac from "../assets/TicTacToeImages.JPG";
 import Rock from "../assets/RockPaperScissorsImages.JPG";
 import LifeGPA from "../assets/LifeGPAImages.JPG";
 import Memories from "../assets/MemoriesImages.JPG";
-import SipSavorStir from "../assets/SipSavorStir.png";
+import SipSavorStir from "../assets/SipSavorStirImages.png";
 
 
 export const Projects = () => {
@@ -14,7 +13,7 @@ export const Projects = () => {
 
       <div className="projectBox">
         <div className="projectCard">
-          <div className="titleBox">Swizzle Cocktail Hub</div>
+          <div className="titleBox">Sip, Savor & Stir</div>
           <div className="swizzleImageBox">
             <img
               src={SipSavorStir}
