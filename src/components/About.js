@@ -1,17 +1,38 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID  = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY  = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
 export const About = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm]           = useState({ name: "", email: "", phone: "", referral: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending]     = useState(false);
+  const [error, setError]         = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    if (error) setError(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Connect to Formspree, EmailJS, or your preferred service here
-    setSubmitted(true);
+    setSending(true);
+    setError(false);
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        { from_name: form.name, from_email: form.email, phone: form.phone || "Not provided", referral: form.referral || "Not specified", message: form.message },
+        PUBLIC_KEY
+      );
+      setSubmitted(true);
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -88,6 +109,50 @@ export const About = () => {
                 </div>
               ))}
 
+              {/* Phone — optional */}
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block font-sans text-xs text-cashmere tracking-[0.2em] uppercase mb-2"
+                >
+                  Phone <span className="normal-case tracking-normal opacity-50">(optional)</span>
+                </label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  placeholder="Your phone number"
+                  className="w-full bg-transparent border-b border-espresso-border py-3 font-sans text-sm text-parchment placeholder-cashmere/30 caret-brass focus:outline-none focus:border-brass transition-all duration-400"
+                />
+              </div>
+
+              {/* How did you find me — optional */}
+              <div>
+                <label
+                  htmlFor="referral"
+                  className="block font-sans text-xs text-cashmere tracking-[0.2em] uppercase mb-2"
+                >
+                  How did you find me? <span className="normal-case tracking-normal opacity-50">(optional)</span>
+                </label>
+                <select
+                  id="referral"
+                  name="referral"
+                  value={form.referral}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-b border-espresso-border py-3 font-sans text-sm text-parchment focus:outline-none focus:border-brass transition-all duration-400 cursor-pointer appearance-none"
+                >
+                  <option value="" disabled className="bg-roasted-charcoal">Select an option</option>
+                  <option value="LinkedIn" className="bg-roasted-charcoal">LinkedIn</option>
+                  <option value="GitHub" className="bg-roasted-charcoal">GitHub</option>
+                  <option value="Google Search" className="bg-roasted-charcoal">Google Search</option>
+                  <option value="Word of Mouth" className="bg-roasted-charcoal">Word of Mouth</option>
+                  <option value="Twitter / X" className="bg-roasted-charcoal">Twitter / X</option>
+                  <option value="Other" className="bg-roasted-charcoal">Other</option>
+                </select>
+              </div>
+
               {/* Message */}
               <div>
                 <label
@@ -108,11 +173,18 @@ export const About = () => {
                 />
               </div>
 
+              {error && (
+                <p className="font-sans text-sm text-brass/80 -mt-2">
+                  Something went wrong — please try again or email me directly.
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="font-sans text-sm tracking-widest text-velvet-espresso bg-brass px-8 py-4 font-medium hover:bg-opacity-85 transition-all duration-400"
+                disabled={sending}
+                className="font-sans text-sm tracking-widest text-velvet-espresso bg-brass px-8 py-4 font-medium hover:bg-opacity-85 transition-all duration-400 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message &rarr;
+                {sending ? "Sending..." : "Send Message →"}
               </button>
             </form>
           )}
