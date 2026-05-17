@@ -1,215 +1,164 @@
 import React from "react";
-import TicTac from "../assets/TicTacToeImages.JPG";
-import Rock from "../assets/RockPaperScissorsImages.JPG";
-import LifeGPA from "../assets/LifeGPAImages.JPG";
-import Memories from "../assets/MemoriesImages.JPG";
 import SipSavorStir from "../assets/SipSavorStirImages.png";
 
+const CASE_STUDIES = [
+  {
+    index: "01",
+    title: "Sip, Savor & Stir",
+    description:
+      "A full-stack cocktail discovery platform built around a live REST API. Engineered complex ingredient-based filtering logic, optimized async data-fetching patterns, and designed a responsive Figma-first UI that scales gracefully across breakpoints.",
+    role: "Software Engineer",
+    focus: "State Architecture",
+    engine: "React / REST API",
+    image: SipSavorStir,
+    imageAlt: "Sip, Savor & Stir application interface",
+    liveUrl: "https://cocktails2023-lindseyacason.vercel.app/",
+    codeUrl: "https://github.com/LindseyCason/cocktails2023",
+  },
+  {
+    index: "02",
+    title: "Automated Testing Epic",
+    description:
+      "Inherited a brittle, legacy QA pipeline with >30% test flakiness. Systematically diagnosed root causes, refactored the suite using Playwright's modern async model, and integrated the suite into CI/CD — reducing flake rate to under 2% and cutting pipeline failure noise by 85%.",
+    role: "Software Engineer in Test",
+    focus: "Flake Reduction",
+    engine: "Playwright / CI",
+    image: null,
+    imageAlt: "Automated testing pipeline dashboard",
+    liveUrl: null,
+    codeUrl: null,
+  },
+];
+
+const VisualFrame = ({ image, imageAlt, index }) => (
+  <div className="w-full aspect-[4/3] bg-roasted-charcoal rounded-xl border border-espresso-border shadow-xl shadow-black/20 overflow-hidden transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-black/30">
+    {image ? (
+      <img
+        src={image}
+        alt={imageAlt}
+        className="w-full h-full object-cover object-top"
+      />
+    ) : (
+      <div className="w-full h-full flex flex-col items-center justify-center gap-4 relative">
+        <div
+          className="absolute inset-0 opacity-[0.06]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(0deg, #C4A484 0px, #C4A484 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #C4A484 0px, #C4A484 1px, transparent 1px, transparent 40px)",
+          }}
+          aria-hidden="true"
+        />
+        <span className="font-serif text-8xl font-light text-brass/20 select-none" aria-hidden="true">
+          {index}
+        </span>
+        <span className="font-sans text-xs tracking-[0.3em] text-cashmere/60 uppercase">
+          QA &middot; Automation &middot; CI/CD
+        </span>
+      </div>
+    )}
+  </div>
+);
+
+const MetadataBlock = ({ role, focus, engine }) => (
+  <div className="border-t border-b border-espresso-border py-5 my-6">
+    <div className="grid grid-cols-3 gap-6">
+      {[
+        { label: "Role",   value: role   },
+        { label: "Focus",  value: focus  },
+        { label: "Engine", value: engine },
+      ].map(({ label, value }) => (
+        <div key={label}>
+          <p className="font-sans text-xs text-cashmere tracking-[0.2em] uppercase mb-1.5">
+            {label}
+          </p>
+          <p className="font-sans text-sm text-parchment">{value}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
 export const Projects = () => {
   return (
-    <div className="projectContainer" id="projects">
-      <span className="headingText headingWhite">PROJECTS</span>
+    <div className="max-w-7xl mx-auto px-8 md:px-16 py-24 sm:py-32">
 
-      <div className="projectBox">
-        <div className="projectCard">
-          <div className="titleBox">Sip, Savor & Stir</div>
-          <div className="swizzleImageBox">
-            <img
-              src={SipSavorStir}
-              alt="screenshot of sip savor stir project"
-              className="projectImage"
-            />
-            <div className="swizzleStack stack">
-              <ul>
-                <li>JavaScript</li>
-                <li>ReactJS</li>
-                <li>RestAPI</li>
-                <li>HTML/CSS</li>
-                <li>Responsive</li>
-                <li>Figma</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="footerBox">
-            <a
-              href="https://cocktails2023-lindseyacason.vercel.app/"
-              className="projectLinks"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Website
-            </a>
-            <a
-              href="https://github.com/LindseyCason/cocktails2023"
-              className="projectLinks"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Code
-            </a>
-          </div>
-        </div>
-
-        <div className="projectCard">
-          <div className="titleBox">Tic Tac Toe</div>
-          <div className="ticTacImageBox">
-            <img
-              src={TicTac}
-              alt="screent shot of tic tac toe project"
-              className="projectImage"
-            />
-            <div className="ticTacStack stack">
-              <ul>
-                <li>JavaScript</li>
-                <li>ReactJS</li>
-                <li>HTML/CSS</li>
-                <li>Responsive</li>
-                <li>State Management</li>
-                <li>Class Components</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="footerBox">
-            <a
-              href="https://mytictactoe-jolly-fly.now.sh/"
-              className="projectLinks"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Website
-            </a>
-            <a
-              href="https://github.com/LindseyCason/mytictactoe"
-              className="projectLinks"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Code
-            </a>
-          </div>
-        </div>
-
-        <div className="projectCard">
-          <div className="titleBox">Memories App (MERN)</div>
-          <div className="memoriesImageBox">
-            <img
-              src={Memories}
-              alt="screenshot of memories project"
-              className="projectImage"
-            />
-            <div className="memoriesStack stack">
-              <ul>
-                <li>JavaScript</li>
-                <li>ReactJS</li>
-                <li>NodeJS</li>
-                <li>MongoDB</li>
-                <li>Material UI</li>
-                <li>Responsive</li>
-              </ul>
-            </div>
-          </div>
-          <div className="footerBox">
-            <a
-              href="https://memories-app-lindsey.netlify.app/"
-              className="projectLinks"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Website
-            </a>
-            <a
-              href="https://github.com/LindseyCason/MemoriesApp"
-              className="projectLinks"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Code
-            </a>
-          </div>
-        </div>
-        <div className="projectCard">
-          <div className="titleBox">
-            HTML/CSS
-            <br />
-            Marketing Page
-          </div>
-          <div className="lifeGPAimageBox">
-            <img
-              src={LifeGPA}
-              alt="screenshot of marketing page project"
-              className="projectImage"
-            />
-
-            <div className="lifeGPAStack stack">
-              <ul>
-                <li>JavaScript</li>
-                <li>HTML/CSS</li>
-                <li>Responsive</li>
-              </ul>
-            </div>
-          </div>
-          <div className="footerBox">
-            <a
-              href="https://marketing-page-lindsey.vercel.app/index.html"
-              className="projectLinks"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Website
-            </a>
-            <a
-              href="https://github.com/LindseyCason/Marketing-page-lindsey"
-              className="projectLinks"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Code
-            </a>
-          </div>
-        </div>
-
-        <div className="projectCard">
-          <div className="titleBox">Rock Paper Scissors</div>
-          <div className="rockImageBox">
-            <img
-              src={Rock}
-              alt="screenshot of rock paper scissors project"
-              className="projectImage"
-            />
-            <div className="rockStack stack">
-              <ul>
-                <li>JavaScript</li>
-                <li>HTML/CSS</li>
-                <li>ReactJS</li>
-                <li>State Management</li>
-                <li>React Hooks</li>
-                <li>Responsive</li>
-              </ul>
-            </div>
-          </div>
-          <div className="footerBox">
-            <a
-              href="https://rockpaperscissors-five-cyan.now.sh/"
-              className="projectLinks"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Website
-            </a>
-            <a
-              href="https://github.com/LindseyCason/rockpaperscissors"
-              className="projectLinks"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Code
-            </a>
-          </div>
-        </div>
+      {/* Section header */}
+      <div className="mb-20 lg:mb-28">
+        <p className="font-sans text-brass text-xs tracking-[0.25em] uppercase mb-4">
+          Selected Work
+        </p>
+        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-parchment leading-tight max-w-2xl">
+          Case Studies in Digital Architecture &amp; Precision.
+        </h2>
       </div>
+
+      {/* Case study list */}
+      {CASE_STUDIES.map((project, i) => (
+        <React.Fragment key={project.index}>
+          <div className="group grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 lg:mb-36">
+
+            {/* Narrative column */}
+            <div className={i % 2 !== 0 ? "lg:order-2" : ""}>
+              <span className="font-sans text-xs tracking-[0.3em] text-brass uppercase">
+                {project.index}
+              </span>
+              <h3 className="font-serif text-3xl md:text-4xl font-light text-parchment mt-2 mb-5 leading-tight">
+                {project.title}
+              </h3>
+              <p className="font-sans text-cashmere text-base leading-relaxed mb-6 max-w-prose">
+                {project.description}
+              </p>
+
+              <MetadataBlock
+                role={project.role}
+                focus={project.focus}
+                engine={project.engine}
+              />
+
+              <div className="flex flex-wrap items-center gap-6 mt-6">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-sans text-sm text-cashmere hover:text-brass transition-all duration-400 tracking-wide no-underline"
+                  >
+                    View Project &rarr;
+                  </a>
+                )}
+                {project.codeUrl && (
+                  <a
+                    href={project.codeUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-sans text-sm text-cashmere hover:text-brass transition-all duration-400 tracking-wide no-underline"
+                  >
+                    Source Code &rarr;
+                  </a>
+                )}
+                {!project.liveUrl && !project.codeUrl && (
+                  <span className="font-sans text-sm text-cashmere/60 italic">
+                  </span>
+                )}
+              </div>
+            </div>
+
+            {/* Visual frame column */}
+            <div className={i % 2 !== 0 ? "lg:order-1" : ""}>
+              <VisualFrame
+                image={project.image}
+                imageAlt={project.imageAlt}
+                index={project.index}
+              />
+            </div>
+          </div>
+
+          {/* Divider between projects, not after the last */}
+          {i < CASE_STUDIES.length - 1 && (
+            <hr className="border-espresso-border mb-24 lg:mb-36" />
+          )}
+        </React.Fragment>
+      ))}
     </div>
   );
 };
