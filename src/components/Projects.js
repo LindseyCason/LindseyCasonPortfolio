@@ -1,5 +1,6 @@
 import React from "react";
 import SipSavorStir from "../assets/SipSavorStirImages.png";
+import VelvetAndVine from "../assets/VelvetAndVineImage.png";
 
 const CASE_STUDIES = [
   {
@@ -17,6 +18,19 @@ const CASE_STUDIES = [
   },
   {
     index: "02",
+    title: "Velvet & Vine",
+    description:
+      "A premium pet hospitality and lifestyle lounge website built entirely without frameworks — pure HTML5, CSS3, and vanilla JS. Demonstrates mastery of CSS Grid, Flexbox, and custom properties to deliver a polished, editorial aesthetic. Integrates Formspree for contact and Calendly for booking with zero dependencies.",
+    role: "Front-End Developer",
+    focus: "No-Framework UI",
+    engine: "HTML5 / CSS3 / JS",
+    image: VelvetAndVine,
+    imageAlt: "Velvet & Vine premium pet hospitality website",
+    liveUrl: "https://velvetandvine-nu.vercel.app/",
+    codeUrl: null,
+  },
+  {
+    index: "03",
     title: "Automated Testing Epic",
     description:
       "Inherited a brittle, legacy QA pipeline with >30% test flakiness. Systematically diagnosed root causes, refactored the suite using Playwright's modern async model, and integrated the suite into CI/CD — reducing flake rate to under 2% and cutting pipeline failure noise by 85%.",
